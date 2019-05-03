@@ -9,7 +9,7 @@ export default class Selecteur extends React.Component {
 
     render = () => (
         <form>
-            <label for='news-source-selector'>News from :</label>
+            <label className='theLabel' htmlFor='news-source-selector'>News from :</label>
             <select id='news-source-selector'>
                 <option value='a-news-source'>Site 1</option>
                 <option value='b-news-source'>Site 2</option>

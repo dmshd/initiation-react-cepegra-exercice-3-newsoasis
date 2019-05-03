@@ -11,14 +11,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: [],
       articles: [
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Olivier' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Olivier' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Olivier' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Olivier' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Olivier' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Olivier' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Olivier' },
+        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'John Doe' },
+        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Arthur' },
+        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
+        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
+        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
+        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
+        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
       ]
     }
   }
@@ -44,6 +45,7 @@ class App extends React.Component {
             )}/>
             <Route exact path='/settings' render={() => <Settings />}/>
             <Route exact path='/about' render={() => <About />}/>
+
           </Switch>
         </main>
       </Router>
