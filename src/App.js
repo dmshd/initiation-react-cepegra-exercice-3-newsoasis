@@ -4,6 +4,8 @@ import Selecteur from './components/Selecteur';
 import ArticlesList from './components/ArticlesList';
 import Settings from './components/Settings';
 import About from './components/About';
+import axios from 'axios';
+
 import './App.css';
 // import logo from './logo.svg';
 
@@ -12,17 +14,18 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      articles: [
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'John Doe' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'Arthur' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
-        {titre: 'Super titre putaclic', content: 'super contenu à rallonge', date: '02/04/2019', author: 'The Author' },
-      ]
+      articles: []
     }
   }
+
+  componentDidMount() {
+    axios.get(`https://newsapi.org/v2/top-headlines?country=be&apiKey=314a55e28f0e4e619fdafcbef75c8b22`)
+      .then(res => {
+        const articles = res.data.articles;
+        this.setState({ data: articles });
+      })
+  }
+
 
   render = () => (
     <div className="App">
